@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.header span {
+    font-size: 1rem;
+    margin-left: 5px;
+}

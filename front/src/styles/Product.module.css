@@ -1,0 +1,38 @@
+.container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 5px;
+    cursor: pointer;
+    transition: width 1s;
+}
+
+.container:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+.img {
+    max-width: 90%;
+    max-height: 90%;
+    vertical-align: middle;
+    align-self: center;
+    border-radius: 15px;
+}
+
+.text {
+    padding: 0;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.name {
+    margin-bottom: "10px";
+    display: "block";
+}
+
+.price {
+    font-weight: bold;
+}

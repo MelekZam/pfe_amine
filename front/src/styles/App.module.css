@@ -1,0 +1,97 @@
+.container {
+    margin: 15px 25px;
+}
+
+.banner {
+    height: 60vh;
+    background-image: url("../../public/banner.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.title {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 2.15rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.grid {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.grid div {
+    flex: 1 0 19%; /* explanation below */
+    margin: 15px 20px;
+}
+
+a.button1 {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #d9a092;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #d9a092;
+    text-align: center;
+    transition: all 0.2s;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 125px;
+    border-radius: 15px;
+}
+
+a.button1:hover {
+    color: #fff;
+    background-color: #d9a092;
+}
+
+@media all and (max-width: 30em) {
+    a.button1 {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+
+.bouncy {
+    animation: bouncy 5s infinite linear;
+    animation-delay: -2s;
+    position: relative;
+}
+@keyframes bouncy {
+    0% {
+        top: 0em;
+    }
+    40% {
+        top: 0em;
+    }
+    43% {
+        top: -0.9em;
+    }
+    46% {
+        top: 0em;
+    }
+    48% {
+        top: -0.4em;
+    }
+    50% {
+        top: 0em;
+    }
+    100% {
+        top: 0em;
+    }
+}
