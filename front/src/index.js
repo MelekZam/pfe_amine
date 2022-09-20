@@ -22,7 +22,7 @@ const theme = createTheme({
 });
 
 root.render(
-    <React.StrictMode>
+    <React.StrictMode style={{ overflow: "hidden" }}>
         <Provider import store={store}>
             <ThemeProvider theme={theme}>
                 <Cart />

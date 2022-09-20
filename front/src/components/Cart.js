@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
@@ -9,16 +9,20 @@ import CartItem from "./CartItem";
 
 const Cart = () => {
     const [quantity, setQuantity] = useState(0);
+    const [total, setTotal] = useState(0);
     const isOpen = useSelector((state) => state.cartIsOpen);
     const cartItems = useSelector((state) => state.cartItems);
     const dispatch = useDispatch();
 
     useEffect(() => {
         let nbrProducts = 0;
-        cartItems.forEach(({ quantity }) => {
+        let totalPrice = 0;
+        cartItems.forEach(({ quantity, price }) => {
             nbrProducts += quantity;
+            totalPrice += price * quantity;
         });
         setQuantity(nbrProducts);
+        setTotal(totalPrice);
     }, [cartItems]);
 
     const closeDrawer = () => {
@@ -34,19 +38,33 @@ const Cart = () => {
                 <span>Your Cart&nbsp;&nbsp;&nbsp;</span>
                 <span style={{ color: "red" }}>({quantity} items)</span>
             </div>
-            {cartItems.map(({ name, path, price, quantity, _id }, index) => {
-                return (
-                    <div style={{ margin: "10px" }} key={index}>
-                        <CartItem
-                            name={name}
-                            path={path}
-                            price={price}
-                            id={_id}
-                            quantity={quantity}
-                        />
-                    </div>
-                );
-            })}
+            <div className={styles.list}>
+                {cartItems.map(
+                    ({ name, path, price, quantity, _id }, index) => {
+                        return (
+                            <div style={{ margin: "10px" }} key={index}>
+                                <CartItem
+                                    name={name}
+                                    path={path}
+                                    price={price}
+                                    id={_id}
+                                    quantity={quantity}
+                                />
+                            </div>
+                        );
+                    }
+                )}
+            </div>
+            <div
+                style={{
+                    marginTop: "15px",
+                    padding: "5px",
+                }}
+            >
+                <Button fullWidth variant="contained">
+                    Check Out Total {total}$
+                </Button>
+            </div>
         </Drawer>
     );
 };

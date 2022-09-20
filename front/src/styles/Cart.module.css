@@ -10,3 +10,8 @@
     font-size: 1rem;
     margin-left: 5px;
 }
+
+.list {
+    height: 85vh;
+    overflow-y: scroll;
+}
