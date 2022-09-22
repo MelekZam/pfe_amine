@@ -30,7 +30,17 @@ const Cart = () => {
     };
 
     return (
-        <Drawer open={isOpen} direction="right" style={{ width: "30vw" }}>
+        <Drawer
+            open={isOpen}
+            direction="right"
+            style={{
+                width: "30vw",
+                height: "100vh",
+                display: "flex",
+                "flex-direction": "column",
+                justifyContent: "space-between",
+            }}
+        >
             <div className={styles.header}>
                 <IconButton onClick={closeDrawer} color="primary">
                     <ArrowBackIcon fontSize="small" />
@@ -59,6 +69,7 @@ const Cart = () => {
                 style={{
                     marginTop: "15px",
                     padding: "5px",
+                    minHeight: "5%",
                 }}
             >
                 <Button fullWidth variant="contained">

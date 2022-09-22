@@ -4,6 +4,7 @@
     align-items: center;
     margin-top: 10px;
     margin-bottom: 20px;
+    height: 5%;
 }
 
 .header span {
@@ -12,6 +13,6 @@
 }
 
 .list {
-    height: 85vh;
+    height: 85%;
     overflow-y: scroll;
 }
